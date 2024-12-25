@@ -1,0 +1,6 @@
+.hero-section {
+  background-image: url("../img/BGIMAGE.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
