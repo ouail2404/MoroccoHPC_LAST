@@ -12,24 +12,27 @@ function About() {
       <Navbar />
 
       {/* Content Container with extra top margin to avoid navbar overlap */}
-      <div className="flex-grow max-w-5xl mx-auto px-4 py-16 mt-24">
+      <div className="flex-grow max-w-5xl mx-auto px-4 py-16 mt-24 text-lg">
         {/* Introduction Paragraph */}
         <div className="mb-12 text-center">
           <h1 className="text-3xl font-bold text-white mb-4">About The Team</h1>
           <p className="text-gray-300 leading-relaxed">
-            This application was developed by <span className="font-semibold text-white">Walid Houmaidi</span> and <span className="font-semibold text-white">Ouail El Maadi</span>, under the
-            supervision of <span className="font-semibold text-white">Dr. Safae Bourhnane</span>.
-            Our collaborative effort and guidance ensured a high-quality product that aims to
-            serve its users effectively.
+            This application was developed by{" "}
+            <span className="font-semibold text-white">Walid Houmaidi</span> and{" "}
+            <span className="font-semibold text-white">Ouail El Maadi</span>,
+            under the supervision of{" "}
+            <span className="font-semibold text-white">
+              Dr. Safae Bourhnane
+            </span>
+            . Our collaborative effort and guidance ensured a high-quality
+            product that aims to serve its users effectively.
           </p>
         </div>
 
         {/* Team Section */}
         <div className="space-y-8">
           {/* Walid Card (no delay) */}
-          <div
-            className="rounded-lg shadow p-6 flex flex-col items-center animate-fadeInUp transition-transform duration-500 hover:scale-105 text-white"
-          >
+          <div className="rounded-lg shadow p-6 flex flex-col items-center animate-fadeInUp transition-transform duration-500 hover:scale-105 text-white">
             <div className="rounded-full border-4 border-blue-600 w-32 h-32 overflow-hidden mb-4">
               <img
                 src={WalidImage}
@@ -74,9 +77,7 @@ function About() {
               />
             </div>
             <h2 className="text-xl font-semibold">Dr. Safae Bourhnane</h2>
-            <p className="mt-2 text-center">
-              Supervisor
-            </p>
+            <p className="mt-2 text-center">Supervisor</p>
           </div>
         </div>
       </div>

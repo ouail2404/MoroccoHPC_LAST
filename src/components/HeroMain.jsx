@@ -12,7 +12,7 @@ export default function HeroMain() {
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full max-w-7xl mx-auto space-y-8 lg:space-y-0 lg:space-x-8">
         {/* Left Content */}
         <div className="flex-1 min-w-[280px] lg:min-w-[300px] text-center lg:text-left px-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6">
             <span
               className="text-white inline-block animate-fadeInUp"
               style={{ animationDelay: "0s" }}
@@ -26,17 +26,16 @@ export default function HeroMain() {
               EVENT
             </span>
           </h1>
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
             <button
-              className="bg-[#3366FF] text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-[#6699FF] hover:-translate-y-1 transform transition duration-300 font-semibold shadow-md animate-fadeInUp"
+              className="bg-[#3366FF] text-white px-6 py-3 rounded-full hover:bg-[#6699FF] hover:-translate-y-1 transform transition duration-300 font-semibold shadow-md animate-fadeInUp"
               style={{ animationDelay: "0.4s" }}
             >
               LEARN MORE
             </button>
             <a href="https://docs.google.com/forms/d/1jM26l5UBpUrJ7AXwwryEI13TeuSzSMa1OusruLGb7ck/edit?usp=forms_home&ths=true">
-              {" "}
               <button
-                className="bg-white text-[#3366FF] px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-[#F0F4FF] hover:-translate-y-1 transform transition duration-300 font-semibold shadow-md animate-fadeInUp"
+                className="bg-white text-[#3366FF] px-6 py-3 rounded-full hover:bg-[#F0F4FF] hover:-translate-y-1 transform transition duration-300 font-semibold shadow-md animate-fadeInUp"
                 style={{ animationDelay: "0.6s" }}
               >
                 REGISTER
@@ -51,6 +50,7 @@ export default function HeroMain() {
           style={{ animationDelay: "0.8s" }}
         >
           <div className="text-center">
+            {/* Speaker Image */}
             <img
               src={speakerImage}
               alt="Ouail El Maadi"
@@ -68,17 +68,17 @@ export default function HeroMain() {
               Ifrane, Morocco
             </p>
           </div>
-          <div className="flex items-center justify-center mt-4 md:mt-6 space-x-4 md:space-x-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center mt-4 sm:mt-6 space-y-4 sm:space-x-8 sm:space-y-0">
             <div className="text-center text-[#3366FF]">
               <i className="far fa-calendar-alt text-xl md:text-2xl"></i>
               <p className="text-sm md:text-lg font-bold mt-1 md:mt-2">
-                September 27th, 2024
+                OCTOBER 9TH, 2024
               </p>
             </div>
             <div className="text-center text-[#3366FF]">
               <i className="far fa-clock text-xl md:text-2xl"></i>
               <p className="text-sm md:text-lg font-bold mt-1 md:mt-2">
-                20H RABAT
+                20H YOUTUBE
               </p>
             </div>
           </div>

@@ -4,19 +4,27 @@ import ouail_elmaadi from "../img/O-M.jpg";
 
 const speakers = [
   {
-    name: "Walid Houmaidi",
+    name: "Dr. Safae Bourhnane",
     image: walid_houmaidi,
   },
   {
-    name: "Ouail El Maadi",
+    name: "Dr. Lahcen laayouni",
     image: ouail_elmaadi,
   },
   {
-    name: "Dr. Safae Bourhnane",
+    name: "Dr. Imad Kissami",
     image: null,
   },
   {
-    name: "Karim Amor",
+    name: "Dr. Vijeta Sharma",
+    image: null,
+  },
+  {
+    name: "Bouchra Rahim",
+    image: null,
+  },
+  {
+    name: "Dr. Robert Basmadjian",
     image: null,
   },
 ];
@@ -26,8 +34,8 @@ export default function Keynotes() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const scrollAmount = 250; // Distance scrolled each time
-  const scrollIntervalTime = 1000; // Scroll every 1 second (adjust as needed)
+  const scrollAmount = 200; // Slightly reduced scroll amount
+  const scrollIntervalTime = 2000; // Slowed down to 2 seconds per scroll
 
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
@@ -143,7 +151,7 @@ export default function Keynotes() {
         className={`relative flex justify-center items-center overflow-hidden mt-4 transition-all duration-700 ${
           isVisible ? "animate-fadeInUp" : "opacity-0"
         }`}
-        style={{ animationDelay: "0.8s" }}
+        style={{ animationDelay: "0.5s" }}
       >
         <div
           ref={scrollContainerRef}

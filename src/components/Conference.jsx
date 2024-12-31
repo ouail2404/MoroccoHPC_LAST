@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import HOC from "../img/HPC.jpg";
+import HOC from "../img/HPC.jpg"; // Image for the conferences
 import "./Conference.css";
 
 const conferences = [
@@ -38,9 +38,7 @@ const conferences = [
 ];
 
 function Conference() {
-  // State to track which cards have been animated
   const [animatedCards, setAnimatedCards] = useState([]);
-
   const cardRefs = useRef([]);
 
   useEffect(() => {
@@ -51,12 +49,11 @@ function Conference() {
         entries.forEach((entry) => {
           const index = entry.target.getAttribute("data-index");
           if (entry.isIntersecting && !animatedCards.includes(index)) {
-            // Mark this card as animated
             setAnimatedCards((prev) => [...prev, index]);
           }
         });
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 }
     );
 
     cardRefs.current.forEach((ref) => {
@@ -74,63 +71,68 @@ function Conference() {
     <div className="bg-black flex flex-col min-h-screen">
       <Navbar />
 
-      {/* Title Section */}
-      <div className="text-center py-64">
-        <h1 className="text-4xl font-bold text-white animate-fadeInUp">
-          Morocco<span className="text-blue-600"> HPC</span> Conferences
+      {/* Title Section with Cool Design and Animation */}
+      <div className="text-center py-40 px-6 md:px-12 lg:px-24">
+        <h1
+          className="text-5xl sm:text-5xl font-semibold text-white leading-tight mb-14 animate-fadeInUp mt-12"
+          style={{ animationDelay: "0.3s" }}
+        >
+          Morocco <span className="text-blue-600">HPC</span> Conferences
         </h1>
         <p
-          className="text-white mt-4 max-w-3xl mx-auto animate-fadeInUp"
-          style={{ animationDelay: "0.4s" }}
+          className="text-white mt-12 mx-auto text-lg md:text-2xl sm:max-w-2xl lg:max-w-3xl animate-fadeInUp"
+          style={{ animationDelay: "0.6s" }}
         >
-          HPC events bring together researchers, students, and industry leaders to explore,
-          discuss, and advance knowledge in High-Performance Computing, fostering innovation
-          and collaboration across various scientific and industrial fields.
+          High-Performance Computing (HPC) events bring together experts,
+          researchers, and leaders from various industries to explore and
+          advance innovations in computing, AI, and science.
         </p>
       </div>
 
-      {/* Timeline */}
-      <div className="flex-grow relative c-section bg-cover bg-center bg-no-repeat mt-16 p-7">
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-white"></div>
-
-        {conferences.map((conf, index) => {
-          const isAnimated = animatedCards.includes(index.toString());
-          return (
-            <div
-              key={conf.id}
-              className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"} mb-12 px-4`}
-            >
-              {/* Card Container */}
+      {/* Timeline Section with Cards Hidden Initially */}
+      <div className="flex-grow relative bg-black py-16 px-6 md:px-12 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-16">
+          {conferences.map((conf, index) => {
+            const isAnimated = animatedCards.includes(index.toString());
+            return (
               <div
-                className={`relative w-full md:w-1/2 ${
-                  isAnimated ? "animate-fadeInUp" : "opacity-0"
-                }`}
-                data-index={index}
-                ref={(el) => (cardRefs.current[index] = el)}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                key={conf.id}
+                className={`relative flex justify-center md:justify-start lg:justify-center`}
               >
                 {/* Conference Card */}
-                <div className="bg-white rounded-lg shadow-lg p-6">
-                  <img
-                    src={conf.image}
-                    alt={conf.title}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
-                  />
-                  <h2 className="text-xl font-bold text-blue-600 mb-2">{conf.title}</h2>
-                  <p className="text-gray-600 mb-2">{conf.description}</p>
-                  <p className="text-gray-700 font-semibold">{conf.date}</p>
-                  <a
-                    href={conf.link}
-                    className="text-pink-500 hover:text-blue-600 font-bold mt-2 inline-block"
-                  >
-                    Learn more
-                  </a>
+                <div
+                  className={`w-full max-w-md transform transition-all duration-700 ${
+                    isAnimated ? "opacity-100 animate-fadeInUp" : "opacity-0"
+                  }`}
+                  data-index={index}
+                  ref={(el) => (cardRefs.current[index] = el)}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                    <img
+                      src={conf.image}
+                      alt={conf.title}
+                      className="w-full h-56 object-cover"
+                    />
+                    <div className="p-6">
+                      <h2 className="text-xl font-semibold text-gray-900 mb-3">
+                        {conf.title}
+                      </h2>
+                      <p className="text-gray-700 mb-4">{conf.description}</p>
+                      <p className="text-gray-600 font-medium">{conf.date}</p>
+                      <a
+                        href={conf.link}
+                        className="text-blue-600 hover:text-blue-800 font-medium mt-4 inline-block"
+                      >
+                        Learn More &rarr;
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       <Footer />

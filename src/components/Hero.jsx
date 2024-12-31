@@ -7,12 +7,11 @@ const Hero = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        // If the hero section is visible in the viewport, update isVisible
         if (entries[0].isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 }
     );
 
     if (heroRef.current) {
@@ -56,7 +55,7 @@ const Hero = () => {
         style={{ animationDelay: "0.4s" }}
       >
         {/* Webinars Section */}
-        <div className="bg-white shadow-xl p-6 rounded-xl w-full sm:w-[90%] md:w-[45%] flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition duration-300">
+        <div className="bg-white shadow-xl p-6 rounded-xl w-full sm:w-[90%] md:w-[45%] lg:w-[30%] flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition duration-300">
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">
             Webinars
           </h3>
@@ -77,7 +76,7 @@ const Hero = () => {
         </div>
 
         {/* Conferences Section */}
-        <div className="bg-white shadow-xl p-6 rounded-xl w-full sm:w-[90%] md:w-[45%] flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition duration-300">
+        <div className="bg-white shadow-xl p-6 rounded-xl w-full sm:w-[90%] md:w-[45%] lg:w-[30%] flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition duration-300">
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">
             Conferences
           </h3>
@@ -91,7 +90,6 @@ const Hero = () => {
               Center
             </li>
           </ul>
-          <a href="conference"></a>
           <button
             onClick={() => alert("Learn more about Conferences")}
             className="text-blue-500 font-semibold mt-8 hover:underline text-lg"
