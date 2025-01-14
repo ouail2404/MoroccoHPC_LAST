@@ -21,7 +21,7 @@ const Footer = () => {
             Spectrum.
           </p>
           <p className="text-sm opacity-75">
-            © MoroccoHPC 2024. All Rights Reserved.
+            © MoroccoHPC 2025. All Rights Reserved.
           </p>
         </div>
 

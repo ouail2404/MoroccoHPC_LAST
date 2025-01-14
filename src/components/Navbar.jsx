@@ -60,7 +60,7 @@ export default function Navbar() {
             onMouseLeave={() => setHovered(false)}
           >
             <a
-              href="#newsletter"
+              href="/newsletter"
               className="hover:border-b-2 hover:border-blue-500 transition duration-200"
             >
               Newsletter
